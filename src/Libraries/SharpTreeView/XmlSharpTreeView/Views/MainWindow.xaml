@@ -1,0 +1,86 @@
+﻿<Window x:Class="XmlSharpTreeView.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:st="http://icsharpcode.net/sharpdevelop/treeview"
+        xmlns:local="clr-namespace:XmlSharpTreeView"
+
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        >
+		
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<st:SharpTreeView
+		x:Name="xmlTreeView1"
+		AllowDrop="True"
+		ShowAlternation="True">
+			<ListView.View>
+				<st:SharpGridView>
+					<GridView.Columns>
+						<GridViewColumn>
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<st:SharpTreeNodeView />
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+						<GridViewColumn Header="Attribute name">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding AttributeName}" Width="300"/>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+						<GridViewColumn Header="Attribute Value">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding AttributeValue}" Width="300"/>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+					</GridView.Columns>
+				</st:SharpGridView>
+			</ListView.View>
+		</st:SharpTreeView>
+
+
+		<st:SharpTreeView Grid.Column="1"
+			x:Name="xmlTreeView2"
+			AllowDrop="True"
+			ShowAlternation="True">
+			<ListView.View>
+				<st:SharpGridView>
+					<GridView.Columns>
+						<GridViewColumn>
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<st:SharpTreeNodeView />
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+						<GridViewColumn Header="Attribute name">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding AttributeName}" Width="300"/>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+						<GridViewColumn Header="Attribute Value">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding AttributeValue}" Width="300"/>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+					</GridView.Columns>
+				</st:SharpGridView>
+			</ListView.View>
+		</st:SharpTreeView>
+	</Grid>
+</Window>

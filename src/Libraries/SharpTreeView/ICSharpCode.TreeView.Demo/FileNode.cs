@@ -44,13 +44,13 @@ namespace ICSharpCode.TreeView.Demo
 			}
 		}
 
-		public override object Icon
-		{
-			get
-			{
-				return Window1.LoadIcon("File.png");
-			}
-		}
+		//public override object Icon
+		//{
+		//	get
+		//	{
+		//		return Window1.LoadIcon("File.png");
+		//	}
+		//}
 
 		public override object ToolTip
 		{

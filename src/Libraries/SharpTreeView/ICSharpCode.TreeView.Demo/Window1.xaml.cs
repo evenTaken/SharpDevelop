@@ -58,12 +58,12 @@ namespace ICSharpCode.TreeView.Demo
 		//    Debug.WriteLine(sb.ToString());
 		//}
 
-		public static Image LoadIcon(string name)
-		{
-			var frame = BitmapFrame.Create(new Uri("pack://application:,,,/Images/" + name, UriKind.Absolute));
-			Image result = new Image();
-			result.Source = frame;
-			return result;
-		}
+		//public static Image LoadIcon(string name)
+		//{
+		//	var frame = BitmapFrame.Create(new Uri("pack://application:,,,/Images/" + name, UriKind.Absolute));
+		//	Image result = new Image();
+		//	result.Source = frame;
+		//	return result;
+		//}
 	}
 }

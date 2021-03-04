@@ -45,21 +45,21 @@ namespace ICSharpCode.TreeView.Demo
 			}
 		}
 
-		public override object Icon
-		{
-			get
-			{
-				return Window1.LoadIcon("Folder.png");
-			}
-		}
+		//public override object Icon
+		//{
+		//	get
+		//	{
+		//		return Window1.LoadIcon("Folder.png");
+		//	}
+		//}
 
-		public override object ExpandedIcon
-		{
-			get
-			{
-				return Window1.LoadIcon("FolderOpened.png");
-			}
-		}
+		//public override object ExpandedIcon
+		//{
+		//	get
+		//	{
+		//		return Window1.LoadIcon("FolderOpened.png");
+		//	}
+		//}
 
 		public override bool IsCheckable
 		{

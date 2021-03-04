@@ -1,13 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31005.135
-MinimumVisualStudioVersion = 10.0.40219.1
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.TreeView", "ICSharpCode.TreeView\ICSharpCode.TreeView.csproj", "{DDE2A481-8271-4EAC-A330-8FA6A38D13D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.TreeView.Demo", "ICSharpCode.TreeView.Demo\ICSharpCode.TreeView.Demo.csproj", "{B521D667-3613-429C-AB58-26A5B5A82004}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSharpTreeView", "XmlSharpTreeView\XmlSharpTreeView.csproj", "{1C0F65FD-1286-4991-B891-F68E62BAD29A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,15 +19,8 @@ Global
 		{B521D667-3613-429C-AB58-26A5B5A82004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B521D667-3613-429C-AB58-26A5B5A82004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B521D667-3613-429C-AB58-26A5B5A82004}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C0F65FD-1286-4991-B891-F68E62BAD29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C0F65FD-1286-4991-B891-F68E62BAD29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C0F65FD-1286-4991-B891-F68E62BAD29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C0F65FD-1286-4991-B891-F68E62BAD29A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BED95E8D-075E-4001-A457-136DB4B65A3C}
 	EndGlobalSection
 EndGlobal
