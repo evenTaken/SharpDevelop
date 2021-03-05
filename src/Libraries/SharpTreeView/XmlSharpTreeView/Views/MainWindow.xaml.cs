@@ -1,13 +1,7 @@
 ﻿using System;
-using System.ComponentModel.Design.Serialization;
 using System.Diagnostics;
-using System.IO;
-using System.Reflection.Metadata;
 using System.Windows;
-using System.Windows.Data;
-using System.Xml;
 using System.Xml.Linq;
-using ICSharpCode.TreeView;
 using XmlSharpTreeView.Models.Helper;
 using XmlSharpTreeView.Models.XmlStn;
 
@@ -55,7 +49,7 @@ namespace XmlSharpTreeView.Views
             {
                 var stnToXmlHelper = new StnToXml(XmlStv1.XmlTreeView.Root);
                 stnToXmlHelper.Transform();
-                
+
                 // Create new instance of standard SaveFileDialog
                 Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
 
@@ -66,13 +60,12 @@ namespace XmlSharpTreeView.Views
                 {
                     // Save document
                     string filename = dlg.FileName;
-                    stnToXmlHelper.SaveToFile(filename);
+                    stnToXmlHelper.SaveXDocumentToFile(filename);
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                return;
             }
         }
     }

@@ -10,10 +10,4 @@
     <ProjectReference Include="..\ICSharpCode.TreeView\ICSharpCode.TreeView.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Konfiguration.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

@@ -11,7 +11,6 @@ namespace XmlSharpTreeView.Models.XmlStn
     public abstract class XmlStnBase : SharpTreeNode
     {
         #region Fields
-
         /// <summary>
         /// Own XObject reference in the root XML file
         /// </summary>

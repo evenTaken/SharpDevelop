@@ -6,26 +6,23 @@ namespace XmlSharpTreeView.Models.XmlStn
     /// <summary>
     /// XmlNodeBase class, which represents an XML element
     /// </summary>
-    public class XmlStnElement : XmlStnBase
+    public sealed class XmlStnElement : XmlStnBase
     {
-
         #region Contructor
         public XmlStnElement(XObject node) : base(node)
         {
-            // If LazyLoading, base class SharpTreeNode initializes Children by calling method LoadChildren
-            LazyLoading = true;
+            // Build up node order
+            LoadChildren();
         }
         #endregion
 
         #region Properties
-
         public override object Text => XmlElementReference.Name.ToString();
 
         /// <summary>
         /// XmlElementReference property as XElement class
         /// </summary>
         private XElement XmlElementReference => (XElement)XmlObject;
-
         #endregion
 
         #region Methods
