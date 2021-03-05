@@ -4,14 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:treeview="http://icsharpcode.net/sharpdevelop/treeview"
+             xmlns:xmlstn ="clr-namespace:XmlSharpTreeView.Models.XmlStn"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <treeview:SharpTreeView
             x:Name="XmlTreeView"
             AllowDrop="True"
-            ShowAlternation="True"
-            Width="Auto">
+            ShowAlternation="True">
             <ListView.View>
                 <treeview:SharpGridView>
                     <GridView.Columns>
@@ -22,10 +22,17 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Attribute Value">
+                        <GridViewColumn Header="Attribute Value" Width="Auto">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding AttributeValue}" Width="Auto"/>
+                                    <ContentControl Content="{Binding}">
+                                        <ContentControl.Resources>
+                                            <DataTemplate DataType="{x:Type xmlstn:XmlStnAttribute}">
+                                                <TextBox Text="{Binding AttributeValue}" Width="Auto" />
+                                            </DataTemplate>
+                                            <DataTemplate DataType="{x:Type xmlstn:XmlStnElement}"/>
+                                        </ContentControl.Resources>
+                                    </ContentControl>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

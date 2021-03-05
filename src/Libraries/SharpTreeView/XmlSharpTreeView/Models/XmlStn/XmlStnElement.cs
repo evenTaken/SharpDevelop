@@ -22,7 +22,7 @@ namespace XmlSharpTreeView.Models.XmlStn
         public override object Text => XmlElementReference.Name.ToString();
 
         /// <summary>
-        /// XmlRef property as XElement class
+        /// XmlElementReference property as XElement class
         /// </summary>
         private XElement XmlElementReference => (XElement)XmlObject;
 

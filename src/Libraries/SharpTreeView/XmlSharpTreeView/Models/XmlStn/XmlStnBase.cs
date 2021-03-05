@@ -11,10 +11,11 @@ namespace XmlSharpTreeView.Models.XmlStn
     public abstract class XmlStnBase : SharpTreeNode
     {
         #region Fields
+
         /// <summary>
         /// Own XObject reference in the root XML file
         /// </summary>
-        protected XObject XmlObject;
+        public XObject XmlObject { get; protected set; }
         #endregion
 
         #region Constructor
@@ -22,16 +23,6 @@ namespace XmlSharpTreeView.Models.XmlStn
         {
             XmlObject = node;
         }
-        #endregion
-
-        #region Properties
-        /// <summary>
-        /// Value of the Attribute
-        /// </summary>
-        /// <remarks>
-        /// In the base class it is an empty string, e.g. the XmlAttributeNode class overwrite this property
-        /// </remarks>
-        public virtual string AttributeValue => string.Empty;
         #endregion
 
         #region Methods
@@ -66,6 +57,11 @@ namespace XmlSharpTreeView.Models.XmlStn
             foreach (var node in nodes)
             {
                 node.Parent?.Children.Remove(node);
+                if (node is XmlStnBase xsb && (xsb.XmlObject.Parent?.HasElements ?? false))
+                {
+                    xsb.XmlObject.Parent.Remove();
+                }
+
             }
         }
         #endregion

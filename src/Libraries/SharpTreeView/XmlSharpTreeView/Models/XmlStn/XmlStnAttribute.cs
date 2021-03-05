@@ -11,18 +11,20 @@ namespace XmlSharpTreeView.Models.XmlStn
         #region Constructor
         public XmlStnAttribute(XObject node) : base(node)
         {
+            AttributeValue = XmlAttributeReference.Value;
         }
         #endregion
 
         #region Properties
         public override object Text => XmlAttributeReference.Name.ToString();
 
-        public override string AttributeValue => XmlAttributeReference.Value;
+        public string AttributeValue { get; set; }
 
         /// <summary>
-        /// XmlRef property as XAttribute class
+        /// XmlElementReference property as XAttribute class
         /// </summary>
         private XAttribute XmlAttributeReference => (XAttribute)XmlObject;
+
         #endregion
 
         #region Methods

@@ -7,14 +7,30 @@
 		mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000"
         >
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
 
         <views:XmlStv Grid.Column="0" x:Name="XmlStv1"/>
-        <views:XmlStv Grid.Column="1" x:Name="XmlStv2"/>
+        <views:XmlStv Grid.Column="1" Grid.Row="0" x:Name="XmlStv2"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Name ="ButtonLoadXml"
+                    Content="Load XML"
+                    Margin="10"
+                    Click="ButtonLoadXml_OnClick"
+            />
+            <Button Name="ButtonSaveXml"
+                    Content="Save Left Stv to XML"
+                    Margin="10"
+                    Click="ButtonSaveXml_OnClick"
+            />
+        </StackPanel>
     </Grid>
 </Window>
