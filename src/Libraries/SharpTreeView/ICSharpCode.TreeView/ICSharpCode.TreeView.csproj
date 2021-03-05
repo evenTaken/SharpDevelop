@@ -73,9 +73,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\Main\GlobalAssemblyInfo.cs">
-      <Link>Properties\GlobalAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="Converters.cs" />
     <Compile Include="EditTextBox.cs" />
     <Compile Include="ExtensionMethods.cs" />
@@ -95,13 +92,6 @@
     <Compile Include="TreeFlattener.cs" />
     <AppDesigner Include="Properties\" />
     <Compile Include="TreeTraversal.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Main\Core\Project\ICSharpCode.Core.csproj">
-      <Project>{35CEF10F-2D4C-45F2-9DD1-161E0FEC583C}</Project>
-      <Name>ICSharpCode.Core</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

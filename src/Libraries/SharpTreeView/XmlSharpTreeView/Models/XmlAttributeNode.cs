@@ -1,23 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 using System.Xml.Linq;
 using System.Xml.Schema;
 using ICSharpCode.TreeView;
 
 namespace XmlSharpTreeView.Models
 {
-	public class XmlAttributeNode : SharpTreeNode
-	{
+    /// <summary>
+    /// XmlNodeBase class, which represents an XML attribute
+    /// </summary>
+    public class XmlAttributeNode : XmlNodeBase
+    {
+        #region Constructor
+        public XmlAttributeNode(XAttribute node) : base(node)
+        {
+        }
+        #endregion
 
-		public XmlAttributeNode(XAttribute node)
-		{
-			AttributeName = node.Name.ToString();
-			AttributeValue = node.Value;
-		}
+        #region Properties
+        public override object Text => XmlAttributeReference.Name.ToString();
 
-		public string AttributeName { get; }
+        public override string AttributeValue => XmlAttributeReference.Value;
 
-		public string AttributeValue { get; set; }
-	}
+        /// <summary>
+        /// XmlRef property as XAttribute class
+        /// </summary>
+        private XAttribute XmlAttributeReference => (XAttribute) XmlObject;
+        #endregion
+
+        #region Methods
+        public override bool CanPaste(IDataObject data)
+        {
+            return Parent.CanPaste(data);
+        }
+
+        public override void Paste(IDataObject data)
+        {
+            Parent.Paste(data);
+        }
+        #endregion
+    }
 }
