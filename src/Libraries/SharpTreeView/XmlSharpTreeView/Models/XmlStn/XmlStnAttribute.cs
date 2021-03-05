@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Xml.Linq;
-using System.Xml.Schema;
-using ICSharpCode.TreeView;
 
-namespace XmlSharpTreeView.Models
+namespace XmlSharpTreeView.Models.XmlStn
 {
     /// <summary>
     /// XmlNodeBase class, which represents an XML attribute
     /// </summary>
-    public class XmlAttributeNode : XmlNodeBase
+    public class XmlStnAttribute : XmlStnBase
     {
         #region Constructor
-        public XmlAttributeNode(XAttribute node) : base(node)
+        public XmlStnAttribute(XObject node) : base(node)
         {
         }
         #endregion
@@ -27,7 +22,7 @@ namespace XmlSharpTreeView.Models
         /// <summary>
         /// XmlRef property as XAttribute class
         /// </summary>
-        private XAttribute XmlAttributeReference => (XAttribute) XmlObject;
+        private XAttribute XmlAttributeReference => (XAttribute)XmlObject;
         #endregion
 
         #region Methods

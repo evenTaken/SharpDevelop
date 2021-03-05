@@ -3,71 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:st="http://icsharpcode.net/sharpdevelop/treeview"
-        xmlns:v="clr-namespace:XmlSharpTreeView.Views"
-        mc:Ignorable="d"
+		xmlns:views="clr-namespace:XmlSharpTreeView.Views"
+		mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000"
         >
-		
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition />
-			<ColumnDefinition />
-		</Grid.ColumnDefinitions>
 
-		<st:SharpTreeView
-		x:Name="XmlTreeView1"
-		AllowDrop="True"
-		ShowAlternation="True"
-        Width="Auto">
-			<ListView.View>
-				<st:SharpGridView>
-					<GridView.Columns>
-						<GridViewColumn>
-							<GridViewColumn.CellTemplate>
-								<DataTemplate>
-									<st:SharpTreeNodeView />
-								</DataTemplate>
-							</GridViewColumn.CellTemplate>
-						</GridViewColumn>
-						<GridViewColumn Header="Attribute Value">
-							<GridViewColumn.CellTemplate>
-								<DataTemplate>
-                                    <TextBlock Text="{Binding AttributeValue}" Width="Auto"/>
-								</DataTemplate>
-							</GridViewColumn.CellTemplate>
-						</GridViewColumn>
-					</GridView.Columns>
-				</st:SharpGridView>
-			</ListView.View>
-		</st:SharpTreeView>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
-
-		<st:SharpTreeView Grid.Column="1"
-			x:Name="XmlTreeView2"
-			AllowDrop="True"
-			ShowAlternation="True">
-			<ListView.View>
-				<st:SharpGridView>
-					<GridView.Columns>
-						<GridViewColumn>
-							<GridViewColumn.CellTemplate>
-								<DataTemplate>
-									<st:SharpTreeNodeView />
-								</DataTemplate>
-							</GridViewColumn.CellTemplate>
-						</GridViewColumn>
-						<GridViewColumn Header="Attribute Value">
-							<GridViewColumn.CellTemplate>
-								<DataTemplate>
-									<TextBlock Text="{Binding AttributeValue}" Width="300"/>
-								</DataTemplate>
-							</GridViewColumn.CellTemplate>
-						</GridViewColumn>
-					</GridView.Columns>
-				</st:SharpGridView>
-			</ListView.View>
-		</st:SharpTreeView>
-
+        <views:XmlStv Grid.Column="0" x:Name="XmlStv1"/>
+        <views:XmlStv Grid.Column="1" x:Name="XmlStv2"/>
     </Grid>
 </Window>

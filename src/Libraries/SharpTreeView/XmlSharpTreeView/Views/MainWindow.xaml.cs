@@ -2,8 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Xml.Linq;
-using XmlSharpTreeView.Models;
-using Path = System.IO.Path;
+using XmlSharpTreeView.Models.XmlStn;
 
 namespace XmlSharpTreeView.Views
 {
@@ -19,8 +18,8 @@ namespace XmlSharpTreeView.Views
             var pathToXml = Path.Combine(Directory.GetCurrentDirectory(), "Aic.demo.config");
             XDocument config = XDocument.Load(pathToXml);
 
-            XmlTreeView1.Root = new XmlElementNode(config.Root);
-            XmlTreeView2.Root = new XmlElementNode(config.Root);
+            XmlStv1.XmlTreeView.Root = new XmlStnElement(config.Root);
+            XmlStv2.XmlTreeView.Root = new XmlStnElement(config.Root);
         }
     }
 }

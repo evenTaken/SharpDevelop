@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ICSharpCode.TreeView;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Xml.Linq;
-using ICSharpCode.TreeView;
 
-namespace XmlSharpTreeView.Models
+namespace XmlSharpTreeView.Models.XmlStn
 {
     /// <summary>
-    /// Base class for SharpTreeNode, which represent a XML file node
+    /// SharpTreeNode base class, which represent a XML file node
     /// </summary>
-    public abstract class XmlNodeBase : SharpTreeNode
+    public abstract class XmlStnBase : SharpTreeNode
     {
         #region Fields
         /// <summary>
@@ -21,7 +18,7 @@ namespace XmlSharpTreeView.Models
         #endregion
 
         #region Constructor
-        protected XmlNodeBase(XObject node)
+        protected XmlStnBase(XObject node)
         {
             XmlObject = node;
         }
@@ -40,20 +37,20 @@ namespace XmlSharpTreeView.Models
         #region Methods
         public override bool CanCopy(SharpTreeNode[] nodes)
         {
-            return nodes.All(n => n is XmlNodeBase);
+            return nodes.All(n => n is XmlStnBase);
         }
 
         protected override IDataObject GetDataObject(SharpTreeNode[] nodes)
         {
             var data = new DataObject();
-            var xmlObjects = nodes.OfType<XmlNodeBase>().Select(n => n.XmlObject).ToArray();
+            var xmlObjects = nodes.OfType<XmlStnBase>().Select(n => n.XmlObject).ToArray();
             data.SetData(DataFormats.FileDrop, xmlObjects);
             return data;
         }
 
         public override bool CanDelete(SharpTreeNode[] nodes)
         {
-            return nodes.All(n => n is XmlNodeBase);
+            return nodes.All(n => n is XmlStnBase);
         }
 
         public override void Delete(SharpTreeNode[] nodes)

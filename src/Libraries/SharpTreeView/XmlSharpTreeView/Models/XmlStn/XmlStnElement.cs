@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Markup;
-using System.Xml;
+﻿using System.Windows;
 using System.Xml.Linq;
-using System.Xml.Schema;
-using ICSharpCode.TreeView;
 
-namespace XmlSharpTreeView.Models
+namespace XmlSharpTreeView.Models.XmlStn
 {
     /// <summary>
     /// XmlNodeBase class, which represents an XML element
     /// </summary>
-    public class XmlElementNode : XmlNodeBase
+    public class XmlStnElement : XmlStnBase
     {
 
         #region Contructor
-        public XmlElementNode(XElement node) : base(node)
+        public XmlStnElement(XObject node) : base(node)
         {
             // If LazyLoading, base class SharpTreeNode initializes Children by calling method LoadChildren
             LazyLoading = true;
@@ -41,11 +33,11 @@ namespace XmlSharpTreeView.Models
         {
             foreach (var attribute in XmlElementReference.Attributes())
             {
-                Children.Add(new XmlAttributeNode(attribute));
+                Children.Add(new XmlStnAttribute(attribute));
             }
             foreach (var element in XmlElementReference.Elements())
             {
-                Children.Add(new XmlElementNode(element));
+                Children.Add(new XmlStnElement(element));
             }
         }
 
@@ -62,10 +54,10 @@ namespace XmlSharpTreeView.Models
                 switch (xObject)
                 {
                     case XAttribute xAttribute:
-                        Children.Add(new XmlAttributeNode(xAttribute));
+                        Children.Add(new XmlStnAttribute(xAttribute));
                         break;
                     case XElement xElement:
-                        Children.Add(new XmlElementNode(xElement));
+                        Children.Add(new XmlStnElement(xElement));
                         break;
                 }
             }
@@ -79,10 +71,10 @@ namespace XmlSharpTreeView.Models
                 switch (xObject)
                 {
                     case XAttribute xAttribute:
-                        Children.Add(new XmlAttributeNode(xAttribute));
+                        Children.Add(new XmlStnAttribute(xAttribute));
                         break;
                     case XElement xElement:
-                        Children.Add(new XmlElementNode(xElement));
+                        Children.Add(new XmlStnElement(xElement));
                         break;
                 }
             }
